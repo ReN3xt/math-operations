@@ -3,8 +3,6 @@ package it.uniroma2.isopi;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import java.util.logging.Logger;
-
 public class Main {
 
     public static void main(String[] args){
@@ -13,27 +11,26 @@ public class Main {
 
         if(args.length == 2 && Main.isDouble(args[0]) && args[1].equals("log")) {
             result = Main.log(Double.parseDouble(args[0]));
-            logger.log(Level.INFO, "{0}", args[0] + " + " + args[1] + " = " + Double.toString(result));
+            logger.log(Level.INFO, "{0}", args[0] + " + " + args[1] + " = " + result);
         } else if (args.length == 3 && Main.isDouble(args[0]) && Main.isDouble(args[1])) {
-            switch(args[2]) {
-                case "add":
+            switch (args[2]) {
+                case "add" -> {
                     result = Main.add(Double.parseDouble(args[0]), Double.parseDouble(args[1]));
-                    logger.log(Level.INFO, "{0}", args[0] + " + " + args[1] + " = " + Double.toString(result));
-                    break;
-                case "sub":
+                    logger.log(Level.INFO, "{0}", args[0] + " + " + args[1] + " = " + result);
+                }
+                case "sub" -> {
                     result = Main.sub(Double.parseDouble(args[0]), Double.parseDouble(args[1]));
-                    logger.log(Level.INFO, "{0}", args[0] + " - " + args[1] + " = " + Double.toString(result));
-                    break;
-                case "div":
+                    logger.log(Level.INFO, "{0}", args[0] + " - " + args[1] + " = " + result);
+                }
+                case "div" -> {
                     result = Main.div(Double.parseDouble(args[0]), Double.parseDouble(args[1]));
-                    logger.log(Level.INFO, "{0}", args[0] + " / " + args[1] + " = " + Double.toString(result));
-                    break;
-                case "mul":
+                    logger.log(Level.INFO, "{0}", args[0] + " / " + args[1] + " = " + result);
+                }
+                case "mul" -> {
                     result = Main.mul(Double.parseDouble(args[0]), Double.parseDouble(args[1]));
-                    logger.log(Level.INFO, "{0}", args[0] + " * " + args[1] + " = " + Double.toString(result));
-                    break;
-                default:
-                    logger.log(Level.INFO, "Operazioni consentite: add / sub / div / mul");
+                    logger.log(Level.INFO, "{0}", args[0] + " * " + args[1] + " = " + result);
+                }
+                default -> logger.log(Level.INFO, "Operazioni consentite: add / sub / div / mul");
             }
 
         } else {
